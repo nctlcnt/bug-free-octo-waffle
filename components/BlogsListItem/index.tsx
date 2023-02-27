@@ -1,16 +1,16 @@
-import Link from 'next/link'
-import styles from './Item.module.scss'
+import { BlogItemDataType } from '../../types'
+import Item from './Item'
 
-type BlogsListItemProps = {
-  id: string
-}
-
-export default (props: BlogsListItemProps) => {
+export default (props: BlogItemDataType) => {
   return (
-    <div className={styles.ItemContainer}>
-      <Link href={'/blogs/' + props.id} className="w-full h-full">
-        <div>{props.id}</div>
-      </Link>
+    <div
+      className={'bg-yellow-400 my-3 w-1/3 h-fit flex'}
+      style={{
+        width: props.width,
+        minHeight: props.width ? props.width / 2 : 100,
+      }}
+    >
+      <Item {...props} />
     </div>
   )
 }

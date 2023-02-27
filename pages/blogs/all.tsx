@@ -1,23 +1,29 @@
-import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import { Layout } from '../../components'
 import BlogsListItem from '../../components/BlogsListItem'
-import { getAllPostIds } from '../../lib/posts'
+import { getSortedPostsData } from '../../lib/posts'
+import useWindowDimensions from '../../lib/useWindowDimensions'
+import { BlogItemDataType } from '../../types'
 
 export async function getStaticProps({ params }) {
-  const paths = getAllPostIds()
+  const data = getSortedPostsData()
   return {
     props: {
-      paths,
+      data,
     },
   }
 }
 
-export default ({ paths }) => {
+export default ({ data }: { data: BlogItemDataType[] }) => {
+  const { height, width } = useWindowDimensions()
+
+  const itemWidth = width && (width * 0.79) / 3
+  console.log(itemWidth)
   return (
-    <Layout>
-      <div className="flex grow w-4/5 m-auto">
-        {paths.map(({ params }) => (
-          <BlogsListItem {...params} key={params.id} />
+    <Layout className="bg-stone-200">
+      <div className="flex grow w-4/5 m-auto justify-between my-3 flex-wrap">
+        {data.map((post) => (
+          <BlogsListItem {...post} key={post.id} width={itemWidth} />
         ))}
       </div>
     </Layout>
