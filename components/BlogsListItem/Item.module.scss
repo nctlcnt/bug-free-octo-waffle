@@ -1,0 +1,10 @@
+.postItem {
+    cursor: pointer;
+    a {
+        color: rgb(71 85 105) !important;
+        &:hover {
+            color: rgb(71 85 105) !important;
+            text-decoration: none;
+        }
+    }
+}
