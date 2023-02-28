@@ -1,7 +1,6 @@
 ---
 title: 'black and white mode'
 date: '2020-01-01'
-description: 'Shooting in black and white mode, to make the contrast between light and dark more prominent.'
 img: 'railway.jpeg'
 ---
 

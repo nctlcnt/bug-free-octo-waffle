@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default () => {
   return (
-    <header className="w-screen h-auto border-y-cyan-600 list-none border-y-2 py-3">
+    <header className="w-screen h-auto border-b-cyan-800 list-none border-b py-3">
       <div className="w-4/5 m-auto flex">
         <li className="mr-4">
           <Link href={'/'}>Home</Link>

@@ -1,6 +1,6 @@
 ---
 title: 'black and white mode'
-date: '2020-01-01'
+date: '2023-03-01'
 img: 'mountain.jpeg'
 ---
 

@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default ({ img, id, title, width }: BlogItemDataType) => {
   return (
-    <Link href={'/blogs/' + id} className="w-full  inline-block">
+    <Link href={'/blogs/' + id} className="w-full inline-block">
       <Image
         src={'/images/' + img}
         alt={title}

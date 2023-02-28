@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { BlogItemDataType } from '../../types'
-import styles from './Item.module.scss'
 
 export default ({ id, description, date, title }: BlogItemDataType) => {
   return (

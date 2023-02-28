@@ -22,7 +22,7 @@ export async function getStaticPaths() {
 export default ({ postData }) => {
   return (
     <Layout>
-      <div className="grow">
+      <div className="grow h-auto">
         <h1>{postData.title}</h1>
         <p>{postData.id}</p>
         <p>{postData.date}</p>

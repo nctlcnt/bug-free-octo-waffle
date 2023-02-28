@@ -1,7 +1,6 @@
 ---
 title: 'Photography in Black and White Mode'
 date: '2023-01-02'
-description: 'One of the most important things to keep in mind when shooting in black and white is to think about your lighting.'
 ---
 
 Shooting in black and white mode, to make the contrast between light and dark more prominent. I love the way the shadows bring additional depth to each photo, highlighting moving lines of trees in key locations and giving the picture a sense of movement.

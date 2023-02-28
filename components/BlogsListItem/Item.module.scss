@@ -1,19 +1,10 @@
-.ItemContainer1 {
-    display: inline-block;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 32%;
-    height: 300px;
-    padding: 0 1rem;
+.postItem {
     cursor: pointer;
-}
-
-.ItemContainer2 {
-    display: inline-block;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 32%;
-    height: 500px;
-    padding: 0 1rem;
-    cursor: pointer;
+    a {
+        color: rgb(71 85 105) !important;
+        &:hover {
+            color: rgb(71 85 105) !important;
+            text-decoration: none;
+        }
+    }
 }
