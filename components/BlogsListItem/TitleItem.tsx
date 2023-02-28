@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleArrowRight } from '@fortawesome/free-solid-svg-icons'
+
 import Link from 'next/link'
 import { BlogItemDataType } from '../../lib/types'
 import DateLeftBottom from './DateLeftBottom'
@@ -5,13 +8,22 @@ import styles from './Item.module.scss'
 
 export default ({ id, title, date, category }: BlogItemDataType) => {
   return (
-    <Link
-      href={'/blogs/' + id}
-      className="w-full p-5 bg-yellow-400 flex flex-col"
-    >
-      {category && <div className="mb-5 text-sm">{category}</div>}
-      <h2 className="text-xl mb-10  text-neutral-600 font-light">{title}</h2>
-      <DateLeftBottom date={date} />
-    </Link>
+    <div className="w-full p-5 bg-yellow-400 flex flex-col pb-8">
+      {category && (
+        <div className="mb-10 font-medium text-sm inline-block text-stone-600">
+          {category}
+        </div>
+      )}
+      <h2 className="text-xl mb-10  text-neutral-600 font-light">
+        <Link href={'/blogs/' + id}>{title}</Link>
+      </h2>
+      <div className="flex justify-between items-center">
+        <DateLeftBottom date={date} />
+        <FontAwesomeIcon
+          icon={faCircleArrowRight}
+          className="text-4xl  text-stone-600"
+        />
+      </div>
+    </div>
   )
 }

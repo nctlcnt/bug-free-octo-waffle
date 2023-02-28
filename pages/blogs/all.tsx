@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { Layout } from '../../components'
 import BlogsListItem from '../../components/BlogsListItem'
 import { getSortedPostsData } from '../../lib/posts'
 import { BlogItemDataType } from '../../lib/types'
@@ -12,7 +11,7 @@ export async function getStaticProps({ params }) {
     props: {
       data,
       sortedIdMapping,
-      bgColor: 'bg-stone-20',
+      bgColor: 'bg-stone-200',
     },
   }
 }
@@ -33,6 +32,11 @@ export default ({
   // console.log(itemWidth)
   return (
     <>
+      <div style={{ minHeight: '150px' }} className="relative">
+        <h1 className="text-6xl absolute bottom-1 font-bold text-stone-700">
+          Blog
+        </h1>
+      </div>
       <div
         className="flex grow justify-between my-3 relative"
         style={{ height: pageHeight }}

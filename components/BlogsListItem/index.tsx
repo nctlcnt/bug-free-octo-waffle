@@ -4,7 +4,7 @@ import { allPositionFilled, getMyPosition } from '../../lib/untils'
 import Item from './Item'
 import styles from './Item.module.scss'
 
-const pageBottomPadding = 20
+const pageBottomPadding = 60
 
 export default ({
   index,
@@ -52,7 +52,7 @@ export default ({
     <div
       ref={ref}
       className={
-        'my-3 w-1/3 h-fit flex absolute bg-neutral-50 ' + styles.postItem
+        'my-3 w-1/3 h-fit flex absolute bg-stone-50 ' + styles.postItem
       }
       style={{
         width: props.width,
