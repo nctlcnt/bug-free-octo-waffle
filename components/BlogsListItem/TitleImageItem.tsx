@@ -1,6 +1,7 @@
 import Link from 'next/link'
-import { BlogItemDataType } from '../../types'
 import Image from 'next/image'
+import { BlogItemDataType } from '../../lib/types'
+import DateLeftBottom from './DateLeftBottom'
 
 export default (props: BlogItemDataType) => {
   return (
@@ -14,8 +15,8 @@ export default (props: BlogItemDataType) => {
         />
       </div>
       <div className="p-4">
-        <h2 className="font-xl font-bold">{props.title}</h2>
-        <p className="font-light">{props.date}</p>
+        <h2 className="font-xl font-bold mb-10">{props.title}</h2>
+        <DateLeftBottom date={props.date} />
         <p className="font-light">{props.description}</p>
       </div>
     </Link>

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
+import { BlogItemDataType } from '../../lib/types'
 import { getMyPosition } from '../../lib/untils'
-import { BlogItemDataType } from '../../types'
 import Item from './Item'
 import styles from './Item.module.scss'
 
@@ -49,7 +49,7 @@ export default ({
     <div
       ref={ref}
       className={
-        'bg-yellow-400 my-3 w-1/3 h-fit flex absolute ' + styles.postItem
+        'my-3 w-1/3 h-fit flex absolute bg-neutral-50 ' + styles.postItem
       }
       style={{
         width: props.width,

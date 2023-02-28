@@ -1,6 +1,6 @@
 ---
-title: 'black and white mode'
-date: '2020-01-01'
+title: ''
+date: '2023-04-01'
 img: 'railway.jpeg'
 ---
 

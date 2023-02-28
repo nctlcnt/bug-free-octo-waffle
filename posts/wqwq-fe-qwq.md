@@ -1,6 +1,7 @@
 ---
-title: 'Two Forms of Pre-rendering'
-date: '2023-08-01'
+title: 'Photography and the magic of seeing things differently'
+date: '2023-01-01'
+category: 'Photography'
 ---
 
 Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.

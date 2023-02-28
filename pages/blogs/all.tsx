@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 import { Layout } from '../../components'
 import BlogsListItem from '../../components/BlogsListItem'
 import { getSortedPostsData } from '../../lib/posts'
+import { BlogItemDataType } from '../../lib/types'
 import useWindowDimensions from '../../lib/useWindowDimensions'
-import { BlogItemDataType } from '../../types'
 
 export async function getStaticProps({ params }) {
   const data = getSortedPostsData()
@@ -12,6 +12,7 @@ export async function getStaticProps({ params }) {
     props: {
       data,
       sortedIdMapping,
+      bgColor: 'bg-stone-200',
     },
   }
 }
@@ -31,9 +32,9 @@ export default ({
 
   // console.log(itemWidth)
   return (
-    <Layout className="bg-stone-200">
+    <>
       <div
-        className="flex grow w-4/5 m-auto justify-between my-3 relative"
+        className="flex grow justify-between my-3 relative"
         style={{ height: pageHeight }}
       >
         {data.map((post, index) => (
@@ -49,6 +50,6 @@ export default ({
           />
         ))}
       </div>
-    </Layout>
+    </>
   )
 }

@@ -1,7 +1,7 @@
 ---
 title: 'black and white mode'
 date: '2023-03-01'
-img: 'mountain.jpeg'
+img: 'back.jpeg'
 ---
 
 We were shooting in the woods and I wanted to show the contrast between light and dark. So I decided to shoot in black and white mode, which is a good way to make the contrast between light and dark more prominent.

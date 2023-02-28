@@ -28,9 +28,9 @@ export const getStaticProps = async () => {
   }
 }
 
-export default ({ isHome, items }) => {
+export default ({ items }) => {
   return (
-    <Layout isHome={isHome}>
+    <>
       <section>
         <div className={styles.firstSectionPadding}></div>
         <h1 className="font-mono text-4xl font-bold">Something I built...</h1>
@@ -47,6 +47,6 @@ export default ({ isHome, items }) => {
           <ShowcaseItem item={item} key={index} />
         ))}
       </section>
-    </Layout>
+    </>
   )
 }
