@@ -10,3 +10,10 @@ export function getMyPosition(mapping, heights, myIndex) {
   }
   return myPosition ? myPosition : 0
 }
+
+export function allPositionFilled(mapping: string[], heights) {
+  for (let i = 0; i < heights.length; i++) {
+    if (!heights[mapping[i]]) return false
+  }
+  return true
+}

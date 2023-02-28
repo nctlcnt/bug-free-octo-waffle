@@ -12,7 +12,7 @@ export async function getStaticProps({ params }) {
     props: {
       data,
       sortedIdMapping,
-      bgColor: 'bg-stone-200',
+      bgColor: 'bg-stone-20',
     },
   }
 }

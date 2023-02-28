@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { BlogItemDataType } from '../../lib/types'
 
-export default ({ img, id, title, width }: BlogItemDataType) => {
+export default ({ img, id, title, width, setLoaded }: BlogItemDataType) => {
   return (
     <Link href={'/blogs/' + id} className="w-full inline-block">
       {/* <Image
@@ -11,7 +11,12 @@ export default ({ img, id, title, width }: BlogItemDataType) => {
         width={width ? width : 100}
         height={width ? 2 * width : 200}
       /> */}
-      <img src={'/images/' + img} alt={title} width={width ? width : 100} />
+      <img
+        src={'/images/' + img}
+        alt={title}
+        width={width ? width : 100}
+        onLoad={() => setLoaded(id)}
+      />
     </Link>
   )
 }

@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { BlogItemDataType } from '../../lib/types'
-import { getMyPosition } from '../../lib/untils'
+import { allPositionFilled, getMyPosition } from '../../lib/untils'
 import Item from './Item'
 import styles from './Item.module.scss'
 
@@ -22,6 +22,7 @@ export default ({
 }) => {
   const [height, setHeight] = useState(0)
   const [transform, setTransform] = useState({})
+  const [loaded, setLoaded] = useState('')
   const ref = useRef(null)
 
   useEffect(() => {
@@ -33,17 +34,19 @@ export default ({
   }, [props.width])
 
   useEffect(() => {
-    if (index < 3 || itemWidths[sortedIdMapping[index - 3]]) {
-      const x = (props.width + 10) * (index % 3)
-      const y = getMyPosition(sortedIdMapping, itemWidths, index)
-      setTransform({
-        transform: `translate(${x}px, ${y}px)`,
-      })
-      setPageHeight((prev) =>
-        Math.max(prev, y + ref.current.clientHeight + pageBottomPadding)
-      )
-    }
-  }, [itemWidths, props.width])
+    // if (allPositionFilled(sortedIdMapping, itemWidths)) {
+    const x = (props.width + 10) * (index % 3)
+    const y = getMyPosition(sortedIdMapping, itemWidths, index)
+    setTransform({
+      transform: `translate(${x}px, ${y}px)`,
+    })
+    console.log(`translate(${x}px, ${y}px)`)
+    setPageHeight((prev) =>
+      Math.max(prev, y + ref.current.clientHeight + pageBottomPadding)
+    )
+    loaded && console.log(loaded)
+    // }
+  }, [itemWidths, props.width, loaded])
 
   return (
     <div
@@ -56,7 +59,7 @@ export default ({
         ...transform,
       }}
     >
-      <Item {...props} />
+      <Item {...props} setLoaded={setLoaded} />
     </div>
   )
 }

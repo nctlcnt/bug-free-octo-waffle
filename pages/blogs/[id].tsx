@@ -21,7 +21,7 @@ export async function getStaticPaths() {
 
 export default ({ postData }) => {
   return (
-    <Layout>
+    <>
       <div className="grow h-auto">
         <h1>{postData.title}</h1>
         <p>{postData.id}</p>
@@ -29,6 +29,6 @@ export default ({ postData }) => {
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         <Link href="/blogs/all">Go back to list</Link>
       </div>
-    </Layout>
+    </>
   )
 }

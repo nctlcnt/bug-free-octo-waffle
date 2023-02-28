@@ -7,6 +7,8 @@ export type BlogItemDataType = {
   img?: string
   width?: number
   category?: string
+} & {
+  setLoaded: Function
 }
 
 export type { GetStaticProps, GetStaticPaths, GetServerSideProps }

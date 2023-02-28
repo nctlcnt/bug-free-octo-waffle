@@ -12,6 +12,7 @@ export default (props: BlogItemDataType) => {
           alt={props.title}
           width={props.width ? props.width : 100}
           height={props.width ? 2 * props.width : 200}
+          onLoad={() => props.setLoaded(props.id)}
         />
       </div>
       <div className="p-4">
