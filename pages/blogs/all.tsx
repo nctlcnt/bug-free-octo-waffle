@@ -68,7 +68,7 @@ export default ({
       </div>
       <div
         className="flex grow justify-between my-3 relative"
-        style={{ height: pageHeight }}
+        style={{ height: pageHeight ? pageHeight : 0 }}
       >
         {data.map((post, index) => (
           <BlogsListItem
