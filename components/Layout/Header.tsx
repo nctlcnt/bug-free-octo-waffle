@@ -1,11 +1,12 @@
 import Link from 'next/link'
 import styles from './Layout.module.scss'
 
-export default () => {
+export default ({ className = '' }) => {
   return (
     <header
       className={
-        'w-screen h-auto border-b-stone-300 list-none border-b py-3 ' +
+        className +
+        ' w-screen h-auto border-b-stone-300 list-none border-b py-3 ' +
         styles.header
       }
     >

@@ -3,6 +3,7 @@ import Footer from './Footer'
 import Header from './Header'
 
 export default ({ isFull = false, children, bgColor = '' }) => {
+  if (isFull) return <>{children}</>
   return (
     <div className={'flex flex-col ' + bgColor}>
       <Head>
@@ -13,7 +14,7 @@ export default ({ isFull = false, children, bgColor = '' }) => {
         <meta name="description" content="My projects"></meta>
       </Head>
       <Header />
-      <div className={isFull ? '' : 'm-auto w-4/5'}>{children}</div>
+      <div className={'m-auto w-4/5'}>{children}</div>
       <Footer />
     </div>
   )
