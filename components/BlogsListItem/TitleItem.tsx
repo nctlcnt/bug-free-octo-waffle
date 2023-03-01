@@ -19,10 +19,12 @@ export default ({ id, title, date, category }: BlogItemDataType) => {
       </h2>
       <div className="flex justify-between items-center">
         <DateLeftBottom date={date} />
-        <FontAwesomeIcon
-          icon={faCircleArrowRight}
-          className="text-4xl  text-stone-600"
-        />
+        <span className="inline-block w-8 h-8">
+          <FontAwesomeIcon
+            icon={faCircleArrowRight}
+            className="text-stone-600"
+          />
+        </span>
       </div>
     </div>
   )

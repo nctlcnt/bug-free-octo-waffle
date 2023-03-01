@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import BlogsListItem from '../../components/BlogsListItem'
 import { getSortedPostsData } from '../../lib/posts'
 import { BlogItemDataType } from '../../lib/types'
+import { getMyPosition } from '../../lib/untils'
 import useWindowDimensions from '../../lib/useWindowDimensions'
 
 export async function getStaticProps({ params }) {
@@ -26,10 +27,38 @@ export default ({
   const { height, width } = useWindowDimensions()
   const [itemWidths, setItemWidths] = useState({})
   const [pageHeight, setPageHeight] = useState(0)
+  const [loaded, setLoaded] = useState('')
+  const [transform, setTransform] = useState([])
+  const pageBottomPadding = 60
+  const colNum = width > 900 ? 3 : 2
 
-  const itemWidth = width && (width * 0.79) / 3
+  const itemWidth = width && (width * 0.79) / colNum
 
-  // console.log(itemWidth)
+  const findMaxPageHeight = (itemWidths, sortedIdMapping) => {
+    let max = 0 // max height of the page
+    for (let i = 0; i < colNum; i++) {
+      let sum = 0
+      for (let j = i; j < sortedIdMapping.length; j += colNum) {
+        sum += itemWidths[sortedIdMapping[j]]
+      }
+      max = Math.max(max, sum)
+    }
+    return max
+  }
+
+  useEffect(() => {
+    setTransform(
+      sortedIdMapping.map((id, index) => {
+        const x = (itemWidth + 10) * (index % colNum)
+        const y = getMyPosition(sortedIdMapping, itemWidths, index, colNum)
+        return `translate(${x}px, ${y}px)`
+      })
+    )
+    setPageHeight(
+      findMaxPageHeight(itemWidths, sortedIdMapping) + pageBottomPadding
+    )
+  }, [itemWidths, loaded])
+
   return (
     <>
       <div style={{ minHeight: '150px' }} className="relative">
@@ -39,7 +68,7 @@ export default ({
       </div>
       <div
         className="flex grow justify-between my-3 relative"
-        style={{ height: pageHeight }}
+        style={{ height: pageHeight ? pageHeight : 0 }}
       >
         {data.map((post, index) => (
           <BlogsListItem
@@ -51,6 +80,8 @@ export default ({
             itemWidths={itemWidths}
             sortedIdMapping={sortedIdMapping}
             setPageHeight={setPageHeight}
+            setLoaded={setLoaded}
+            transform={transform[index]}
           />
         ))}
       </div>
