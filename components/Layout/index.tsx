@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Footer from './Footer'
 import Header from './Header'
 
-export default ({ isHome = false, children, bgColor = '' }) => {
+export default ({ isFull = false, children, bgColor = '' }) => {
   return (
     <div className={'flex flex-col ' + bgColor}>
       <Head>
@@ -13,7 +13,7 @@ export default ({ isHome = false, children, bgColor = '' }) => {
         <meta name="description" content="My projects"></meta>
       </Head>
       <Header />
-      <div className={'w-4/5 m-auto '}>{children}</div>
+      <div className={isFull ? '' : 'm-auto w-4/5'}>{children}</div>
       <Footer />
     </div>
   )
