@@ -16,8 +16,8 @@ export const getStaticProps = async () => {
 
 export default ({ items }) => {
   return (
-    <div className="grow flex flex-wrap h-screen bg-[#6c8ec3]">
-      <div className="w-2/3 h-full">
+    <div className="grow flex h-screen bg-[#6c8ec3]">
+      <div className="w-2/3 h-full flex flex-wrap">
         <section className="w-full h-1/2">
           <div className="w-full h-full flex justify-center text-left flex-col p-5 text-stone-200">
             <h1 className="font-bold text-5xl font-mono block">Hello!</h1>
@@ -27,27 +27,42 @@ export default ({ items }) => {
             </h2>
           </div>
         </section>
-        <section className="w-1/2 h-1/2 pr-1 inline-block">
+        <section className="w-1/2 h-1/2 p-2 inline-block relative">
           <Link href={'/blogs/all'}>
-            <div className=" w-full h-full rounded-md p-2">
-              <div className=" w-full h-full border border-yellow-50 rounded-md">
+            <div className="w-full h-full">
+              <span
+                className=" text-white bottom-1 left-2 absolute font-mono font-bold"
+                style={{ fontSize: '6rem' }}
+              >
                 Blog
-              </div>
+              </span>
             </div>
           </Link>
         </section>
-        <section className="w-1/2 h-1/2 pl-1 inline-block">
-          <div className=" w-full h-full rounded-md p-2">
-            <div className=" w-full h-full border border-yellow-50 rounded-md">
-              123
+        <section className="w-1/2 h-1/2 p-2 inline-block relative">
+          <Link href={'/blogs/about'}>
+            <div className="w-full h-full">
+              <span
+                className=" text-white bottom-1 left-2 absolute font-mono font-bold"
+                style={{ fontSize: '6rem' }}
+              >
+                About
+              </span>
             </div>
-          </div>
+          </Link>
         </section>
       </div>
-      <section
-        className="w-1/3 p-1"
-        style={{ background: "url('/images/cloud.jpg')" }}
-      ></section>
+      <section className="w-1/3 p-1">
+        <div className=" w-full h-full rounded-md p-2">
+          <div
+            className=" w-full h-full border border-yellow-50 rounded-md"
+            style={{
+              background: 'url(/images/pngegg.png) center',
+              backgroundSize: 'cover',
+            }}
+          ></div>
+        </div>
+      </section>
     </div>
   )
 }
