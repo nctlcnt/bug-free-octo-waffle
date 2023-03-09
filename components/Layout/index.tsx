@@ -11,7 +11,6 @@ export default ({ isHome = false, children, bgColor = '' }) => {
         <div className={'flex flex-col ' + bgColor}>
           <Head>
             <title>Blog</title>
-            <link rel="icon" href="/images/profile.gif" />
             <meta charSet="utf-8" />
             <meta
               name="viewport"
