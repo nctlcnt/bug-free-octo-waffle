@@ -1,3 +1,5 @@
+import Image from 'next/image'
+import Link from 'next/link'
 import React, { useState } from 'react'
 import { Header, Layout } from '../components'
 import { ShowcaseItem } from '../components'
@@ -7,96 +9,45 @@ import styles from '../styles/Home.module.scss'
 export const getStaticProps = async () => {
   return {
     props: {
-      isFull: true,
-      items: [
-        {
-          title: 'Item 1',
-          description:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab iste, aperiam iusto nostrum numquam cum expedita voluptate rem explicabo temporibus architecto ullam? Optio nesciunt mollitia fugiat sit molestias sequi! Provident?',
-        },
-        {
-          title: 'Item 2',
-          description:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab iste, aperiam iusto nostrum numquam cum expedita voluptate rem explicabo temporibus architecto ullam? Optio nesciunt mollitia fugiat sit molestias sequi! Provident?',
-        },
-        {
-          title: 'Item 3',
-          description:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab iste, aperiam iusto nostrum numquam cum expedita voluptate rem explicabo temporibus architecto ullam? Optio nesciunt mollitia fugiat sit molestias sequi! Provident?',
-        },
-      ],
+      isHome: true,
     },
   }
 }
 
 export default ({ items }) => {
-  const { height, width } = useWindowDimensions()
-  const [positionY, setPositionY] = useState(0)
-  const [disabled, setDisabled] = useState(false)
-
-  const handleScroll = (direction) => {
-    if (disabled) return
-    setDisabled(true)
-    setPositionY((prev) => prev + direction * height)
-    setTimeout(() => {
-      setDisabled(false)
-    }, 1000)
-  }
-
   return (
-    <div className="overflow-hidden">
-      <Header className="absolute"></Header>
-      <div
-        style={{
-          transition: 'all 1000ms ease 0s',
-          transform: `translate3d(0px, ${positionY}px, 0px)`,
-        }}
-        className="h-screen w-screen"
-      >
-        <section className="flex flex-row h-screen w-screen pt-10">
-          <button onClick={() => handleScroll(-1)} disabled={disabled}>
-            12334
-          </button>
-          <div className="h-full w-9/12">
-            <div>1</div>
-          </div>
-          <div className="h-full pt-10">
-            <div>2</div>
-            <div>3</div>
+    <div className="grow flex flex-wrap h-screen bg-[#6c8ec3]">
+      <div className="w-2/3 h-full">
+        <section className="w-full h-1/2">
+          <div className="w-full h-full flex justify-center text-left flex-col p-5 text-stone-200">
+            <h1 className="font-bold text-5xl font-mono block">Hello!</h1>
+            <h2 className="font-bold text-2xl font-mono block">
+              I'm a front-end engineer with multiple years development
+              experience of commercial web application.
+            </h2>
           </div>
         </section>
-        <section className="flex flex-row h-screen w-screen pt-10">
-          <div className="h-full w-9/12">
-            <div>1</div>
-            <button onClick={() => handleScroll(-1)} disabled={disabled}>
-              12334
-            </button>
-            <button onClick={() => handleScroll(1)} disabled={disabled}>
-              opoiuu
-            </button>
-          </div>
-          <div className="h-full pt-10">
-            <div>2</div>
-            <div>3</div>
-          </div>
+        <section className="w-1/2 h-1/2 pr-1 inline-block">
+          <Link href={'/blogs/all'}>
+            <div className=" w-full h-full  bg-yellow-500 rounded-md p-2">
+              <div className=" w-full h-full border border-yellow-50 rounded-md">
+                Blog
+              </div>
+            </div>
+          </Link>
         </section>
-        <section className="flex flex-row h-screen w-screen pt-10 overflow-x-auto">
-          <div className="h-full w-9/12 shrink-0">
-            <div>1</div>
-            <button onClick={() => handleScroll(1)} disabled={disabled}>
-              opoiuu
-            </button>
-          </div>
-          <div className="h-full pt-10 w-9/12 shrink-0">
-            <div>2</div>
-            <div>3</div>
-          </div>
-          <div className="h-full pt-10 w-9/12 shrink-0">
-            <div>2</div>
-            <div>3</div>
+        <section className="w-1/2 h-1/2 pl-1 inline-block">
+          <div className=" w-full h-full  bg-yellow-500 rounded-md p-2">
+            <div className=" w-full h-full border border-yellow-50 rounded-md">
+              123
+            </div>
           </div>
         </section>
       </div>
+      <section
+        className="w-1/3 p-1"
+        style={{ background: "url('/images/cloud.jpg')" }}
+      ></section>
     </div>
   )
 }

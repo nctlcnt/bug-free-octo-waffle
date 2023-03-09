@@ -1,24 +1,26 @@
 import Link from 'next/link'
 import styles from './Layout.module.scss'
 
-export default ({ className = '' }) => {
+export default () => {
+  const blogListUrl = '/blogs/all'
+  const homeUrl = '/'
+  const otherUrl = '/other'
   return (
     <header
       className={
-        className +
-        ' w-screen h-auto border-b-stone-300 list-none border-b py-3 ' +
+        'w-screen h-auto border-b-stone-300 list-none border-b py-3 ' +
         styles.header
       }
     >
-      <div className="w-4/5 m-auto flex text-sm ">
+      <div className={'w-4/5 flex text-sm m-auto'}>
         <li className="mr-4">
-          <Link href={'/'}>Home</Link>
+          <Link href={homeUrl}>Home</Link>
         </li>
         <li className="mr-4">
-          <Link href={'/blogs/all'}>Blog</Link>
+          <Link href={blogListUrl}>Blog</Link>
         </li>
         <li className="mr-4">
-          <Link href={'/Other'}>Other</Link>
+          <Link href={otherUrl}>Other</Link>
         </li>
       </div>
     </header>
