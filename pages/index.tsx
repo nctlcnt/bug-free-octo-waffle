@@ -29,7 +29,7 @@ export default ({ items }) => {
         </section>
         <section className="w-1/2 h-1/2 pr-1 inline-block">
           <Link href={'/blogs/all'}>
-            <div className=" w-full h-full  bg-yellow-500 rounded-md p-2">
+            <div className=" w-full h-full rounded-md p-2">
               <div className=" w-full h-full border border-yellow-50 rounded-md">
                 Blog
               </div>
@@ -37,7 +37,7 @@ export default ({ items }) => {
           </Link>
         </section>
         <section className="w-1/2 h-1/2 pl-1 inline-block">
-          <div className=" w-full h-full  bg-yellow-500 rounded-md p-2">
+          <div className=" w-full h-full rounded-md p-2">
             <div className=" w-full h-full border border-yellow-50 rounded-md">
               123
             </div>
