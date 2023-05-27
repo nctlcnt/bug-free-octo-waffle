@@ -8,7 +8,7 @@ export default ({ isHome = false, children, bgColor = '' }) => {
       {isHome ? (
         <>{children}</>
       ) : (
-        <div className={'flex flex-col ' + bgColor}>
+        <div className={'flex flex-col flex-grow h-full' + bgColor}>
           <Head>
             <title>Blog</title>
             <meta charSet="utf-8" />
