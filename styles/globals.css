@@ -18,6 +18,10 @@ body {
   font-size: 18px;
 }
 
+html, body, #__next {
+  height: 100%;
+}
+
 * {
   box-sizing: border-box;
 }
