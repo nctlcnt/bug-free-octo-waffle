@@ -1,5 +1,5 @@
 ---
-title: 'Photography and the magic of seeing things differently'
+title: 'Like this one and another one'
 date: '2023-01-01'
 category: 'Photography'
 ---

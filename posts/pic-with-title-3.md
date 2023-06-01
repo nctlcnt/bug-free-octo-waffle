@@ -1,8 +1,7 @@
 ---
-title: '10❤ Photos of Nature That Will Inspire You to Fall in Love With The World Again'
+title: 'And maybe sorted by a little bit of pics height'
 date: '2023-01-01'
 img: 'mountain.jpeg'
-category: 'Photography'
 ---
 
 We recommend using **Static Generation** (with and without data) whenever possible because your page can be built once and served by CDN, which makes it much faster than having a server render the page on every request.

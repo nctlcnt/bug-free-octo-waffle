@@ -1,7 +1,6 @@
 ---
-title: ''
+title: 'You Can Get Them by Not Adding Image in Metadata'
 date: '2023-01-02'
-category: 'Photography'
 ---
 
 Shooting in black and white mode, to make the contrast between light and dark more prominent. I love the way the shadows bring additional depth to each photo, highlighting moving lines of trees in key locations and giving the picture a sense of movement.
