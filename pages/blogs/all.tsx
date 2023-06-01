@@ -57,16 +57,13 @@ export default ({
     setPageHeight(
       findMaxPageHeight(itemWidths, sortedIdMapping) + pageBottomPadding
     )
-    setTimeout(() => {
-      window.dispatchEvent(new Event('resize'))
-    }, 300) // temporary fix for the bug that the layout is not correct when the page is loaded
   }, [itemWidths, loaded])
 
   return (
     <>
       <div style={{ minHeight: '150px' }} className="relative">
-        <div className=" absolute bottom-1 font-bold text-stone-700">
-          <h1 className="text-6xl">Blog (with AI generated gibberish)</h1>
+        <div className="bottom-1 font-bold text-stone-700">
+          <h1 className="text-6xl pt-3">Blog (with AI generated gibberish)</h1>
           <p className="text-xl text-stone-400 pt-2">
             And cute pics I have collected.
           </p>
@@ -88,6 +85,7 @@ export default ({
             setPageHeight={setPageHeight}
             setLoaded={setLoaded}
             transform={transform[index]}
+            loaded={loaded}
           />
         ))}
       </div>
