@@ -11,6 +11,7 @@ export default ({
   setPageHeight,
   setLoaded,
   transform,
+  loaded,
   ...props
 }: BlogItemDataType & {
   index: number
@@ -20,6 +21,7 @@ export default ({
   setPageHeight: Function
   setLoaded: Function
   transform: string
+  loaded: string
 }) => {
   const [height, setHeight] = useState(0)
   const ref = useRef(null)
@@ -30,7 +32,7 @@ export default ({
       ...prev,
       [props.id]: ref.current.clientHeight,
     }))
-  }, [props.width])
+  }, [props.width, loaded])
 
   return (
     <div

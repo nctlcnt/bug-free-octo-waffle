@@ -1,0 +1,7 @@
+.postBody {
+  width: 60%;
+  min-width: 600px;
+  & > * {
+    margin-bottom: 20px;
+  }
+}
