@@ -57,14 +57,20 @@ export default ({
     setPageHeight(
       findMaxPageHeight(itemWidths, sortedIdMapping) + pageBottomPadding
     )
+    setTimeout(() => {
+      window.dispatchEvent(new Event('resize'))
+    }, 300) // temporary fix for the bug that the layout is not correct when the page is loaded
   }, [itemWidths, loaded])
 
   return (
     <>
       <div style={{ minHeight: '150px' }} className="relative">
-        <h1 className="text-6xl absolute bottom-1 font-bold text-stone-700">
-          Blog
-        </h1>
+        <div className=" absolute bottom-1 font-bold text-stone-700">
+          <h1 className="text-6xl">Blog (with AI generated gibberish)</h1>
+          <p className="text-xl text-stone-400 pt-2">
+            And cute pics I have collected.
+          </p>
+        </div>
       </div>
       <div
         className="flex grow justify-between my-3 relative"

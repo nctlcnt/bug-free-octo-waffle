@@ -1,5 +1,5 @@
 ---
-title: 'Two Forms of Pre-rendering'
+title: 'These yellow blocks are for pure text content'
 date: '2023-08-01'
 ---
 

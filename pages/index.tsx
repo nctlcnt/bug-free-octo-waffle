@@ -28,13 +28,13 @@ export default ({ items }) => {
           </div>
         </section>
         <section className="w-1/2 h-1/2 p-2 inline-block relative">
-          <Link href={'/blogs/other'}>
+          <Link href={'/blogs/all'}>
             <div className="w-full h-full">
               <span
                 className=" text-white bottom-1 left-2 absolute font-mono font-bold"
                 style={{ fontSize: '6rem' }}
               >
-                Other
+                Blog
               </span>
             </div>
           </Link>

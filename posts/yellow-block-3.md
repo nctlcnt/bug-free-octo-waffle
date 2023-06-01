@@ -1,5 +1,5 @@
 ---
-title: 'When to Use Static Generation v.s. Server-side Rendering'
+title: 'And You Can Get a Tag by Adding Category in MetaData'
 date: '2022-10-02'
 category: 'NextJS'
 ---

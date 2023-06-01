@@ -1,5 +1,5 @@
 ---
-title: 'black and white mode'
+title: 'This blog is sorted by date, which is indicated in metadata'
 date: '2023-03-01'
 img: 'bg.jpeg'
 ---
