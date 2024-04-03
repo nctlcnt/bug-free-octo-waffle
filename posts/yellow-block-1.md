@@ -1,5 +1,5 @@
 ---
-title: 'These yellow blocks are for pure text content'
+title: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.'
 date: '2023-08-01'
 ---
 

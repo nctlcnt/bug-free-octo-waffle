@@ -63,9 +63,9 @@ export default ({
     <>
       <div style={{ minHeight: '150px' }} className="relative">
         <div className="bottom-1 font-bold text-stone-700">
-          <h1 className="text-6xl pt-3">Blog (with AI generated gibberish)</h1>
+          <h1 className="text-6xl pt-3">Lorem ipsum.</h1>
           <p className="text-xl text-stone-400 pt-2">
-            And cute pics I have collected.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, soluta.
           </p>
         </div>
       </div>
